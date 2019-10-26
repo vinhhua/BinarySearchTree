@@ -103,6 +103,15 @@ public class BinarySearchTree {
         }
     }
 
+    public int getHeight() {
+        return getHeightHelper(root);
+    }
+
+    private int getHeightHelper(Node root) {
+        if (root == null) return 0;
+        return 1 + Math.max(getHeightHelper(root.left), getHeightHelper(root.right));
+    }
+
     public int getSum() {
         return getSumHelper(root);
     }
